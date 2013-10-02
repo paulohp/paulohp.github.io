@@ -100,7 +100,12 @@ header {
   float:left;
   position:fixed;
 }
-
+.tile-image {
+  height: 250px;
+  margin: 31px 0 27px;
+  vertical-align: bottom;
+  border-radius: 100%;
+}
 header ul {
   list-style:none;
   height:40px;
@@ -184,7 +189,7 @@ footer {
 }
 
 @media print, screen and (max-width: 960px) {
-  
+
   div.wrapper {
     width:auto;
     margin:0;
