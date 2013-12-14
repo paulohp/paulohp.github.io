@@ -1,35 +1,14 @@
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<title>Paulo Pires - Software Developer</title>
-
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<link rel="stylesheet" href="stylesheets/pygment_trac.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<img src="https://2.gravatar.com/avatar/6c1a0f0cb5866562beda3e6795ba030c?d=https%3A%2F%2Fidenticons.github.com%2F03b7bdc6855a82905a53a464c97ca4ec.png&r=x&s=440" alt="Paulo Pires" class="tile-image">
-			<h1>Paulo Pires</h1>
-
-
-			<p class="view"><a href="https://github.com/paulohp">Github</a></p>
-			<p class="view"><a href="https://facebook.com/paulo.h.pires">Facebook</a></p>
-			<p class="view"><a href="https://twitter.com/paulo_hp">Twitter</a></p>
-
-		</header>
-		<section>
-			<br>
-            <br>
-			<h2>Oi, sou o Paulo Pires, programador, palestrante, degustador de cerveja e jogador de FIFA. Apaixonado por ágil e codigo usável. Hoje trabalho na Rapidoware, uma empresa incrível que faz coisas incríveis com javascript.</h2>
-		</section>
+---
+layout: default
+title: Your New Jekyll Site
+---
+{% for post in site.posts %}
+	<div class="4u">
+		<article class="box box-style2">
+			<a href="{{ post.url }}" class="image image-full"><img src="images/portfolio06.jpg" alt="" /></a>
+			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p>Ornare nulla proin odio consequat.</p>
+			<span>{{ post.date | date_to_string }}</span>
+		</article>
 	</div>
-	<script src="javascripts/scale.fix.js"></script>
-</body>
-</html>
+{% endfor %}
