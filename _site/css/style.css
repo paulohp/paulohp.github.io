@@ -39,7 +39,7 @@
 		-ms-transition: color .2s ease-in-out;
 		transition: color .2s ease-in-out;
 	}
-	
+
 		a:hover
 		{
 			color: #1B75A6 !important;
@@ -55,42 +55,42 @@
 		font-weight: 600;
 		color: #3e3e3e;
 	}
-	
+
 	h1, h2, h3, h4, h5, h6
 	{
 		color: #3e3e3e;
 	}
-	
+
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
 		{
 			text-decoration: none;
 			color: inherit;
 		}
-	
+
 	h2, h3, h4, h5, h6
 	{
 		font-weight: 700;
 	}
-	
+
 	h1
 	{
 		font-weight: 300;
 	}
-	
+
 		h1 strong
 		{
 			font-weight: 700;
 		}
-	
+
 	em, i
 	{
 		font-style: italic;
 	}
-	
+
 	form
 	{
 	}
-	
+
 		form input,
 		form select,
 		form textarea
@@ -131,7 +131,7 @@
 		{
 			height: 15em;
 		}
-		
+
 		form .formerize-placeholder
 		{
 			color: #555 !important;
@@ -175,18 +175,18 @@
 		height: 1px;
 		margin: 3em 0 4em 0;
 	}
-	
+
 	p, ul, ol, dl, table
 	{
 		margin-bottom: 2em;
 	}
-	
+
 	section,
 	article
 	{
 		margin-bottom: 3em;
 	}
-	
+
 	section > :last-child,
 	article > :last-child
 	{
@@ -203,7 +203,7 @@
 	{
 		display: inline-block;
 	}
-	
+
 		.image img
 		{
 			display: block;
@@ -216,13 +216,13 @@
 		width: 100%;
 		margin: 0 0 2em 0;
 	}
-	
+
 	.image-left
 	{
 		float: left;
 		margin: 0 2em 2em 0;
 	}
-	
+
 	.image-centered
 	{
 		display: block;
@@ -234,7 +234,7 @@
 			margin: 0 auto;
 			width: auto;
 		}
-	
+
 	.button
 	{
 		position: relative;
@@ -279,7 +279,7 @@
 			background-color: #76cdf0;
 			color: #fff !important;
 		}
-		
+
 		.button:active
 		{
 			background-image: -moz-linear-gradient(top, rgba(48,141,196,1), rgba(77,164,199,0));
@@ -290,7 +290,7 @@
 			box-shadow: inset 0px 0px 0px 1px #135c86, inset 0px -2px 1px 0px rgba(255,255,255,0.75);
 			top: 1px;
 		}
-	
+
 		.button-alt
 		{
 			background-color: #393939;
@@ -306,7 +306,7 @@
 			{
 				background-color: #444;
 			}
-			
+
 			.button-alt:active
 			{
 				background-image: -moz-linear-gradient(top, rgba(45,45,45,1), rgba(50,50,50,0));
@@ -316,7 +316,7 @@
 				background-image: linear-gradient(top, rgba(45,45,45,1), rgba(50,50,50,0));
 				box-shadow: inset 0px 0px 0px 1px #242424, inset 0px -2px 1px 0px rgba(255,255,255,0.2);
 			}
-	
+
 		.button-big
 		{
 		}
@@ -326,7 +326,7 @@
 		cursor: default;
 		margin: 0;
 	}
-	
+
 		ul.social li
 		{
 			position: relative;
@@ -387,7 +387,9 @@
 			{
 				top: 0;
 			}
-
+			.post{
+					text-align:left;
+			}
 			ul.social li a
 			{
 				display: block;
@@ -400,13 +402,13 @@
 				font-size: 24px;
 				text-shadow: 1px 1px 0px rgba(255,255,255,0.1);
 			}
-			
+
 			ul.social li a span
 			{
 				display: block;
 				text-indent: -9999px;
 			}
-			
+
 	.box
 	{
 		background: #fff;
@@ -433,7 +435,7 @@
 		.fa.solo
 		{
 		}
-		
+
 			.fa.solo span
 			{
 				display: none;
@@ -876,13 +878,13 @@
 		background-image: none;
 		background-color: #fff;
 	}
-	
+
 	.wrapper-style2
 	{
 		background-color: #fafafa;
 		text-shadow: 1px 1px 0px #fff;
 	}
-	
+
 	.wrapper-style3
 	{
 		background-color: #f4f4f4;
@@ -896,16 +898,16 @@
 		text-shadow: -1px -1px 0px #181818;
 	}
 
-		.wrapper-style4 h1, 
-		.wrapper-style4 h2, 
-		.wrapper-style4 h3, 
-		.wrapper-style4 h4, 
-		.wrapper-style4 h5, 
+		.wrapper-style4 h1,
+		.wrapper-style4 h2,
+		.wrapper-style4 h3,
+		.wrapper-style4 h4,
+		.wrapper-style4 h5,
 		.wrapper-style4 h6
 		{
 			color: #fff;
 		}
-		
+
 /*********************************************************************************/
 /* Nav                                                                           */
 /*********************************************************************************/
@@ -921,17 +923,17 @@
 		z-index: 10000;
 		cursor: default;
 	}
-	
+
 		#nav ul
 		{
 			margin-bottom: 0;
 		}
-	
+
 		#nav li
 		{
 			display: inline-block;
 		}
-		
+
 		#nav a
 		{
 			position: relative;
@@ -940,12 +942,12 @@
 			text-decoration: none;
 			outline: 0;
 		}
-		
+
 			#nav a:hover
 			{
 				color: #fff !important;
 			}
-			
+
 			#nav a.active:before
 			{
 				content: '';
@@ -958,7 +960,7 @@
 				border-right: solid 0.75em transparent;
 				border-top: solid 0.6em #282828;
 			}
-			
+
 /*********************************************************************************/
 /* Articles                                                                      */
 /*********************************************************************************/
@@ -976,7 +978,7 @@
 		#top p
 		{
 		}
-	
+
 			#top p a
 			{
 				color: inherit;
@@ -990,7 +992,7 @@
 	{
 		color: #666;
 	}
-	
+
 		#copyright a
 		{
 			color: inherit;
@@ -1001,7 +1003,7 @@
 			-ms-transition: color .2s ease-in-out;
 			transition: color .2s ease-in-out;
 		}
-		
+
 		#copyright a:hover
 		{
 			color: #777;
