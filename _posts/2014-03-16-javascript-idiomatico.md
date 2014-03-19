@@ -3,6 +3,8 @@ layout: post
 title:  "Javascript Idiomático"
 date:   2014-03-16 01:10:07
 categories: programming javascript
+cover: "http://lexfridman.com/blogs/research/files/2011/02/donald_knuth.png"
+excerpt: "Como dizem por ai, código bem escrito não precisa de documentação."
 ---
 
 Javascript idiomático? what the fuck? Essa foi a primeira reação que muitos desenvolvedores por ae tiveram. "Pra que preciso escrever javascript de forma consistente? É só javascript". Bom, o fato é que o javascript tem evoluído muito no últimos anos, e com a consolidação da importância do front-end, isso só tende a aumentar.
@@ -13,7 +15,7 @@ Como assim guia de estilo?
 Um guia de estilo é um conjunto de padrões para a escrita e design de código. A implementação de um guia de estilo proporciona uniformidade no estilo de código e formatação, muitas vezes cobrindo orientações sobre recuo (tabs ou espaços), variável e função, convenções de nomeação, onde melhor se aplicam espaços em branco e assim por diante.
 
 E porque isso é importante?
-Como dizem por ae, código bem escrito não precisa de documentação. Embora isso não seja 100% verdade, mas fato é que quanto mais legível o código, menos nosso ele é, se tornando mais fácil de manter por outros devs.
+Como dizem por ai, código bem escrito não precisa de documentação. Embora isso não seja 100% verdade, mas fato é que quanto mais legível o código, menos nosso ele é, se tornando mais fácil de manter por outros devs.
 Seguir um guia de estilo consistente ajuda tanto a melhorar a qualidade do código que escrevemos. Isso facilita que outros desenvolvedores o entendam rapidamente,  podendo economizar tempo no longo prazo.
 
 Usando de código bem escrito, você pode:
