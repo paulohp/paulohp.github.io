@@ -44,7 +44,14 @@
         </div>
         <div class="wrapper wrapper-style2">
           <article id="code">
-
+            <header>
+              <h2>Code</h2>
+              <div class="container">
+                <div class="row">
+                  <div class="code-list"></div>
+                </div>
+              </div>
+            </header>
           </article>
         </div>
         <div class="wrapper wrapper-style3">
@@ -145,7 +152,7 @@
     <script type="text/javascript" charset="utf-8">
       GithubFeed.init({
     		username: 'paulohp',          //github username
-    		container: '#code', //DOM element to bind
+    		container: '.code-list', //DOM element to bind
     		count: 3, 				    //Number of repositories you'll want to show
     		order: 'desc' 			    //Order to show
     	});
