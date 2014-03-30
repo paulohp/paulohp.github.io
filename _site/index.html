@@ -44,7 +44,7 @@
         </div>
         <div class="wrapper wrapper-style2">
           <article id="code">
-            
+
           </article>
         </div>
         <div class="wrapper wrapper-style3">
@@ -157,9 +157,18 @@
           </footer>
         </article>
       </div>
+    <script src="/js/githubFeed.min.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/config.js"></script>
     <script src="/js/skel.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      GithubFeed.init({
+    		username: 'paulohp',          //github username
+    		container: '#code', //DOM element to bind
+    		count: 3, 				    //Number of repositories you'll want to show
+    		order: 'desc' 			    //Order to show
+    	});
+    </script>
     <script type="text/javascript">
    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
    var disqus_shortname = 'paulopires'; // required: replace example with your forum shortname
