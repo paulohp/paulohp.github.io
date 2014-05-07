@@ -918,14 +918,12 @@
 
 	#nav
 	{
-		background-color: #282828;
-		text-align: center;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
-		cursor: default;
+		background-color: #2e9fff;
+		min-height: 59px;
+		height: 59px;
+		padding: 0 5px;
+		border-bottom: 2px solid #2e87e7;
+		z-index: 1500;
 	}
 
 		#nav ul
