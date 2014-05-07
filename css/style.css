@@ -918,6 +918,15 @@
 
 	#nav
 	{
+
+		text-align: center;
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		
+		cursor: default;
+
 		background-color: #2e9fff;
 		min-height: 59px;
 		height: 59px;
