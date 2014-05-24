@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Paulo Pires - Software Developer</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/skel-noscript.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style-desktop.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+  </head>
+    <body>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="container">
+          <li><a href="/">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Home -->
+        <div class="wrapper wrapper-style1">
+        <article id="portfolio">
+          <header>
+            <h2>Blog</h2>
+            <!--<span>Proin odio consequat  sapien vestibulum ipsum primis sed amet consequat lorem dolore feugiat lorem ipsum dolore.</span>-->
+          </header>
+          <div class="container">
+            <div class="row">
+                <h2>Como começar com Node Webkit? Parte 1</h2>
+<p class="meta">24 May 2014</p>
+
+<div class="post">
+<p>Como se não bastasse ser magico escrever JS no server e no front, agora tambem é possivel
+escrever JS em apps desktop. Node Webkit, um projeto nascido dentro da Intel, teve seu codigo
+aberto em 2011, e ganhou notoriedade esse ano com o projeto PopcornTime. O projeto provê a plataforma Node.js dentro do browser Webkit, que foi extendido
+para dar poderes de manipulação do browser aos desenvolvedores que antes eram impossiveis.</p>
+
+<h3>Como instalar?</h3>
+
+<p>O projeto pode ser instalado no OS X, Linux e Windows muito facilmente. Para tal, entre na seção de downloads do <a href="https://github.com/rogerwang/node-webkit#downloads">projeto no github</a>,
+baixe o arquivo apropriado para você, extraia e se lembre do local onde ele está.
+Agora precisamos achar o binario do node-webkit. No Linux, ele se chama <strong>nw</strong>, no Windows <strong>nw.exe</strong> e no OS X ele fica empacotado dentro do node-webkit.app (/path/to/node-webkit.app/Contents/MacOS/node-webkit).
+No meu Macbook eu defini um <strong>alias</strong> pra facilitar. É só colocar isso no seu <strong>.bash_profile</strong> ou no <strong>.bashrc</strong>:
+alias nw=&quot;/Applications/node-webkit.app/Contents/MacOS/node-webkit&quot;. Você pode substituir o caminho e apontar para o loca onde está o seu binario.</p>
+
+<h3>Criando um app simples</h3>
+
+<p>Para quem já fez algo com Node.js, vai se familiarizar com a forma com que se cria projetos com node-webkit.
+Como no Node, uma arquivo package.json é usabo pra descrever a aplicação. Nesse arquivo, o elemento &#39;main&#39; especifica o ponto de entrada da aplicação e qual pagina o node-webkit deve exibir, por exemplo um &quot;index.html&quot;. Como em um app usando Angular ou Ember,
+esse arquivo só deve incluir CSS&#39;s e JavaScript&#39;s necessarios. O <strong>package.json</strong> tambem serve pra descrever, por exemplo, o tamanho da janela. Veja como ficaria:</p>
+<div class="highlight"><pre><code class="json language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.html&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;window&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;toolbar&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">600</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Agora no seu <strong>index.html</strong>, faça um HTML basico, com fins de exemplo:</p>
+<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Meu Primeiro App Node Webkit<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Pronto, agora só precisamos empacotar tudo em um arquivo com extensão <strong>.nw</strong>. Fazemos isso com o comando <code>zip -r my-first-app.nw *</code> no Linux e OS X.
+E usando o comando <strong>nw</strong> (definido no alias algumas linhas acima), eu faço isso <code>nw my-first-app.nw</code> e pronto! Nosso primeiro app com node-webkit rodando!</p>
+
+<p>Eu sei, nada muito util. Mas na proxima parte vamos fazer uma integração com o twitter.</p>
+
+</div>
+
+            </div>
+            <div class="row">
+              <div class="12u">
+                <div id="disqus_thread"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+         <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paulopires'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/config.js"></script>
+    </body>
+</html>
