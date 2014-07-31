@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Desafio 5 Commits"
+title:  "Desafio <br/> 5 Commits"
 date:   2014-03-19 12:00:00
 categories: programming desafios
 cover: "https://www.apertus.org/sites/default/files/bart_os.gif"
