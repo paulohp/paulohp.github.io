@@ -16,14 +16,16 @@ Vamos lá, com alguns passos simples é possível fazer nossos pacotes.
 Você pode definir a variável de ambiente $GOPATH para qualquer pasta que você quiser. Se você trabalha em projetos maiores, é uma boa idéia criar um $GOPATH diferente para cada um deles. Eu recomendaria esta abordagem especialmente para a implantação, de forma que a atualização de uma biblioteca para o projeto A não quebra projeto B que pode exigir uma versão anterior da mesma biblioteca.
 Observe também que você pode configurar seu $GOPATH a uma lista de pastas, delimitado por dois pontos. Então você pode ter um $GOPATH contendo todos os pacotes comumente utilizados, e GOPATHS separadas para cada projeto com pacotes adicionais ou diferentes versões de pacotes existentes.
 Mas a menos que você está trabalhando em uma série de diferentes projetos Go simultaneamente, é o suficiente ter apenas um único $GOPATH localmente. Então, vamos criar um:
-```
+{% highlight bash %}
 mkdir $HOME/gopath
-```
+{% endhighlight %}
 Em seguida, você precisa definir duas variáveis ​​de ambiente para contar a go tool onde ele pode encontrar pacotes Go existentes e onde ele deve instalar novos. A melhor forma é adicionar as duas linhas seguintes ao seu ~/.bashrc ou ~ /.profile (e não se esqueça de recarregar sua .bashrc depois).
-```
-export GOPATH="$HOME/gopath"
-export PATH="$GOPATH/bin:$PATH"
-```
+
+{% highlight bash %}
+export GOPATH="$HOME/gopath
+export PATH="$GOPATH/bin:$PATH
+{% endhighlight %}
+
 
 **2) Crie seu projeto**
 

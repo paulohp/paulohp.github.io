@@ -12,10 +12,10 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 	.small-sub{
-		font-size: 12px;
+		font-size: 20px;
 		color: grey;
 		position: relative;
-		top: -6px;
+		top: -4px;
 	}
 	*
 	{
