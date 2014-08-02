@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/skel-noscript.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/style-desktop.css" />
+    <link href="/css/syntax.css" rel="stylesheet">
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
@@ -41,59 +42,59 @@
 
 <p>Bom, o primeiro passo é baixar o pacode mgo via go get, o qual podemos fazer assim:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">go get gopkg.in/mgo.v2</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> go get gopkg.in/mgo.v2</code></pre></div>
 
 <p>Depois de baixado, podemos criar nossa aplicação, que vai poder inserir e buscar dados no mongo. Vamos chamar esse arquivo de <code>book.go</code>. Com o arquivo criado, vamos começar a programar.</p>
 
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-    <span class="s">&quot;fmt&quot;</span>
-    <span class="s">&quot;gopkg.in/mgo.v2&quot;</span>
-    <span class="s">&quot;gopkg.in/mgo.v2/bson&quot;</span>
-<span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="kn">package</span> <span class="nx">main</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="lineno">4</span>   <span class="s">&quot;fmt&quot;</span>
+<span class="lineno">5</span>   <span class="s">&quot;gopkg.in/mgo.v2&quot;</span>
+<span class="lineno">6</span>   <span class="s">&quot;gopkg.in/mgo.v2/bson&quot;</span>
+<span class="lineno">7</span> <span class="p">)</span></code></pre></div>
 
 <p>Nessa primeira parte, eu criei o package main e fiz o importe de 3 pacotes: <code>fmt</code>, que possui varias funções legais para formatação, <code>mgo</code>, que o pacote que se comunica com o mongo e o <code>mgo/bson</code>, uma implementação da especificação BSON (binary json) para Go.</p>
 
 <p>Aqui eu defino uma struct <code>Book</code>, que vai conter os atributos da minha collection.</p>
 
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Book</span> <span class="kd">struct</span> <span class="p">{</span>
-    <span class="nx">Title</span> <span class="kt">string</span>
-    <span class="nx">Pages</span> <span class="kt">string</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="kd">type</span> <span class="nx">Book</span> <span class="kd">struct</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="nx">Title</span> <span class="kt">string</span>
+<span class="lineno">3</span>   <span class="nx">Pages</span> <span class="kt">string</span>
+<span class="lineno">4</span> <span class="p">}</span></code></pre></div>
 
 <p>Agora vamos a função principal:</p>
 
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">session</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">mgo</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;localhost:27017&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">defer</span> <span class="nx">session</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-    <span class="p">[</span><span class="o">...</span><span class="p">]</span></code></pre></div>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="nx">session</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">mgo</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;localhost:27017&quot;</span><span class="p">)</span>
+<span class="lineno">3</span>   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+<span class="lineno">4</span>       <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="lineno">5</span>   <span class="p">}</span>
+<span class="lineno">6</span>   <span class="k">defer</span> <span class="nx">session</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<span class="lineno">7</span>   <span class="p">[</span><span class="o">...</span><span class="p">]</span></code></pre></div>
 
 <p>Aqui eu defino o endereço e a porta que o mgo vai se conectar com o MongoDB. No meu caso, localhost:27017. Eu recebo 2 variaves de retorno, <code>session</code>, para quando se conectar com sucesso e <code>err</code>. Temos um if, para quando err for diferente de nil, disparar um <code>panic</code> para que <code>defer session.Close()</code> seja executado e feche a conexão com o mongo.
 Continuando na <code>func main</code>,  vamos agora selecionar a collection que vamos trabalhar e inserir alguns dados nela:</p>
 
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="nx">c</span> <span class="o">:=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">DB</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">).</span><span class="nx">C</span><span class="p">(</span><span class="s">&quot;book&quot;</span><span class="p">)</span>
-    <span class="nx">err</span> <span class="p">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Insert</span><span class="p">(</span><span class="nx">Book</span><span class="p">{</span><span class="s">&quot;GoT&quot;</span><span class="p">,</span> <span class="s">&quot;600&quot;</span><span class="p">},</span>
-        <span class="nx">Book</span><span class="p">{</span><span class="s">&quot;Divergent&quot;</span><span class="p">,</span> <span class="s">&quot;456&quot;</span><span class="p">})</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="nx">c</span> <span class="o">:=</span> <span class="nx">session</span><span class="p">.</span><span class="nx">DB</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">).</span><span class="nx">C</span><span class="p">(</span><span class="s">&quot;book&quot;</span><span class="p">)</span>
+<span class="lineno">2</span>   <span class="nx">err</span> <span class="p">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Insert</span><span class="p">(</span><span class="nx">Book</span><span class="p">{</span><span class="s">&quot;GoT&quot;</span><span class="p">,</span> <span class="s">&quot;600&quot;</span><span class="p">},</span>
+<span class="lineno">3</span>       <span class="nx">Book</span><span class="p">{</span><span class="s">&quot;Divergent&quot;</span><span class="p">,</span> <span class="s">&quot;456&quot;</span><span class="p">})</span>
+<span class="lineno">4</span>   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+<span class="lineno">5</span>       <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="lineno">6</span>   <span class="p">}</span></code></pre></div>
 
 <p>Atribuimos a <code>c</code> a sessão do mongo com a collection <code>book</code> do banco <code>test</code>. Em seguida inserimos 2 livros na collection <code>book</code> e se houver erro guardamos em <code>err</code> e disparamos o panic para fechar a conexão. Se <code>err == nil</code>, vida que segue :D</p>
 
 <p>Vamos finalmente fazer a busca:</p>
 
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="nx">result</span> <span class="o">:=</span> <span class="nx">Book</span><span class="p">{}</span>
-    <span class="nx">err</span> <span class="p">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Find</span><span class="p">(</span><span class="nx">bson</span><span class="p">.</span><span class="nx">M</span><span class="p">{</span><span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;GoT&quot;</span><span class="p">}).</span><span class="nx">One</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">result</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Pages:&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">Pages</span><span class="p">)</span>
-<span class="p">}</span></code></pre></div>
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="nx">result</span> <span class="o">:=</span> <span class="nx">Book</span><span class="p">{}</span>
+<span class="lineno">2</span>   <span class="nx">err</span> <span class="p">=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">Find</span><span class="p">(</span><span class="nx">bson</span><span class="p">.</span><span class="nx">M</span><span class="p">{</span><span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;GoT&quot;</span><span class="p">}).</span><span class="nx">One</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">result</span><span class="p">)</span>
+<span class="lineno">3</span>   <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+<span class="lineno">4</span>       <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="lineno">5</span>   <span class="p">}</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span>   <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Pages:&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">Pages</span><span class="p">)</span>
+<span class="lineno">8</span> <span class="p">}</span></code></pre></div>
 
 <p>Bom pessoal, era mais ou menos isso que tinha pra mostrar pra vocês!
 Abraços.</p>
