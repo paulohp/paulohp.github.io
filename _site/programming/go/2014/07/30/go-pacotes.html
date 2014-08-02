@@ -20,7 +20,7 @@
       <nav id="nav">
         <ul class="container">
           <li><a href="/">Home</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
@@ -48,20 +48,20 @@
 Observe também que você pode configurar seu $GOPATH a uma lista de pastas, delimitado por dois pontos. Então você pode ter um $GOPATH contendo todos os pacotes comumente utilizados, e GOPATHS separadas para cada projeto com pacotes adicionais ou diferentes versões de pacotes existentes.
 Mas a menos que você está trabalhando em uma série de diferentes projetos Go simultaneamente, é o suficiente ter apenas um único $GOPATH localmente. Então, vamos criar um:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir <span class="nv">$HOME</span>/gopath</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> mkdir <span class="nv">$HOME</span>/gopath</code></pre></div>
 
 <p>Em seguida, você precisa definir duas variáveis ​​de ambiente para contar a go tool onde ele pode encontrar pacotes Go existentes e onde ele deve instalar novos. A melhor forma é adicionar as duas linhas seguintes ao seu ~/.bashrc ou ~ /.profile (e não se esqueça de recarregar sua .bashrc depois).</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&quot;$HOME/gopath</span>
-<span class="s2">export PATH=&quot;</span><span class="nv">$GOPATH</span>/bin:<span class="nv">$PATH</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&quot;$HOME/gopath</span>
+<span class="lineno">2</span> <span class="s2">export PATH=&quot;</span><span class="nv">$GOPATH</span>/bin:<span class="nv">$PATH</span></code></pre></div>
 
 <p><strong>2) Crie seu projeto</strong></p>
 
 <p>Se você quiser criar um novo projeto Go, que sera hospedado no github.com mais tarde, você deve criar este projeto em $GOPATH/src/github.com/meunome/meuprojeto. É importante que o caminho corresponda a URL do repo github.com, porque a go tool vai seguir a mesma convenção. Então, vamos criar a raiz do projeto e inicializar um novo repositório git:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir -p <span class="nv">$GOPATH</span>/src/github.com/myname/myproject
-<span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/myname/myproject
-git init</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> mkdir -p <span class="nv">$GOPATH</span>/src/github.com/myname/myproject
+<span class="lineno">2</span> <span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/myname/myproject
+<span class="lineno">3</span> git init</code></pre></div>
 
 <p><strong>3) Escreva sua aplicação</strong></p>
 
@@ -71,8 +71,8 @@ git init</code></pre></div>
 
 <p>Criar um novo repositório no github.com, faça o upload de sua chave pública SSH se você não tiver feito isso antes e de um push suas alterações para o repositório:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git remote add origin git@github.com:myname/myproject.git
-git push origin master</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> git remote add origin git@github.com:myname/myproject.git
+<span class="lineno">2</span> git push origin master</code></pre></div>
 
 <p>Simples, não? agora você tem seu pacote Go publicado e pronto para compartilhar com a comunidade!</p>
 

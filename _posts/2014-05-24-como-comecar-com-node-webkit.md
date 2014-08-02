@@ -25,7 +25,7 @@ Para quem já fez algo com Node.js, vai se familiarizar com a forma com que se c
 Como no Node, uma arquivo package.json é usabo pra descrever a aplicação. Nesse arquivo, o elemento 'main' especifica o ponto de entrada da aplicação e qual pagina o node-webkit deve exibir, por exemplo um "index.html". Como em um app usando Angular ou Ember,
 esse arquivo só deve incluir CSS's e JavaScript's necessarios. O **package.json** tambem serve pra descrever, por exemplo, o tamanho da janela. Veja como ficaria:
 
-```json
+{% highlight json linenos %}
 {
   "name": "hello",
   "main": "index.html",
@@ -35,10 +35,10 @@ esse arquivo só deve incluir CSS's e JavaScript's necessarios. O **package.json
     "height": 600
   }
 }
-```
+{% endhighlight %}
 Agora no seu **index.html**, faça um HTML basico, com fins de exemplo:
 
-```html
+{% highlight html linenos %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,7 +48,7 @@ Agora no seu **index.html**, faça um HTML basico, com fins de exemplo:
 
   </body>
 </html>
-```
+{% endhighlight %}
 
 Pronto, agora só precisamos empacotar tudo em um arquivo com extensão **.nw**. Fazemos isso com o comando ``` zip -r my-first-app.nw *``` no Linux e OS X.
 E usando o comando **nw** (definido no alias algumas linhas acima), eu faço isso ```nw my-first-app.nw``` e pronto! Nosso primeiro app com node-webkit rodando!

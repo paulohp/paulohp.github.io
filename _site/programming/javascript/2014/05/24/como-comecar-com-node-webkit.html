@@ -20,7 +20,7 @@
       <nav id="nav">
         <ul class="container">
           <li><a href="/">Home</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="/blog">Blog</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
@@ -56,27 +56,29 @@ alias nw=&quot;/Applications/node-webkit.app/Contents/MacOS/node-webkit&quot;. V
 <p>Para quem já fez algo com Node.js, vai se familiarizar com a forma com que se cria projetos com node-webkit.
 Como no Node, uma arquivo package.json é usabo pra descrever a aplicação. Nesse arquivo, o elemento &#39;main&#39; especifica o ponto de entrada da aplicação e qual pagina o node-webkit deve exibir, por exemplo um &quot;index.html&quot;. Como em um app usando Angular ou Ember,
 esse arquivo só deve incluir CSS&#39;s e JavaScript&#39;s necessarios. O <strong>package.json</strong> tambem serve pra descrever, por exemplo, o tamanho da janela. Veja como ficaria:</p>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.html&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;window&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;toolbar&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span>
-    <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">600</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Agora no seu <strong>index.html</strong>, faça um HTML basico, com fins de exemplo:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Meu Primeiro App Node Webkit<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
 
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="lineno">1</span> <span class="p">{</span>
+<span class="lineno">2</span>   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span>
+<span class="lineno">3</span>   <span class="nt">&quot;main&quot;</span><span class="p">:</span> <span class="s2">&quot;index.html&quot;</span><span class="p">,</span>
+<span class="lineno">4</span>   <span class="nt">&quot;window&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="lineno">5</span>     <span class="nt">&quot;toolbar&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="lineno">6</span>     <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span>
+<span class="lineno">7</span>     <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">600</span>
+<span class="lineno">8</span>   <span class="p">}</span>
+<span class="lineno">9</span> <span class="p">}</span></code></pre></div>
+
+<p>Agora no seu <strong>index.html</strong>, faça um HTML basico, com fins de exemplo:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="lineno">1</span> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="lineno">2</span> <span class="nt">&lt;html&gt;</span>
+<span class="lineno">3</span>   <span class="nt">&lt;head&gt;</span>
+<span class="lineno">4</span>     <span class="nt">&lt;title&gt;</span>Meu Primeiro App Node Webkit<span class="nt">&lt;/title&gt;</span>
+<span class="lineno">5</span>   <span class="nt">&lt;/head&gt;</span>
+<span class="lineno">6</span>   <span class="nt">&lt;body&gt;</span>
+<span class="lineno">7</span> 
+<span class="lineno">8</span>   <span class="nt">&lt;/body&gt;</span>
+<span class="lineno">9</span> <span class="nt">&lt;/html&gt;</span></code></pre></div>
+
 <p>Pronto, agora só precisamos empacotar tudo em um arquivo com extensão <strong>.nw</strong>. Fazemos isso com o comando <code>zip -r my-first-app.nw *</code> no Linux e OS X.
 E usando o comando <strong>nw</strong> (definido no alias algumas linhas acima), eu faço isso <code>nw my-first-app.nw</code> e pronto! Nosso primeiro app com node-webkit rodando!</p>
 

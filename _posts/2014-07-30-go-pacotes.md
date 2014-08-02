@@ -17,13 +17,13 @@ Você pode definir a variável de ambiente $GOPATH para qualquer pasta que você
 Observe também que você pode configurar seu $GOPATH a uma lista de pastas, delimitado por dois pontos. Então você pode ter um $GOPATH contendo todos os pacotes comumente utilizados, e GOPATHS separadas para cada projeto com pacotes adicionais ou diferentes versões de pacotes existentes.
 Mas a menos que você está trabalhando em uma série de diferentes projetos Go simultaneamente, é o suficiente ter apenas um único $GOPATH localmente. Então, vamos criar um:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 mkdir $HOME/gopath
 {% endhighlight %}
 
 Em seguida, você precisa definir duas variáveis ​​de ambiente para contar a go tool onde ele pode encontrar pacotes Go existentes e onde ele deve instalar novos. A melhor forma é adicionar as duas linhas seguintes ao seu ~/.bashrc ou ~ /.profile (e não se esqueça de recarregar sua .bashrc depois).
 
-{% highlight bash %}
+{% highlight bash linenos %}
 export GOPATH="$HOME/gopath
 export PATH="$GOPATH/bin:$PATH
 {% endhighlight %}
@@ -34,7 +34,7 @@ export PATH="$GOPATH/bin:$PATH
 
 Se você quiser criar um novo projeto Go, que sera hospedado no github.com mais tarde, você deve criar este projeto em $GOPATH/src/github.com/meunome/meuprojeto. É importante que o caminho corresponda a URL do repo github.com, porque a go tool vai seguir a mesma convenção. Então, vamos criar a raiz do projeto e inicializar um novo repositório git:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 mkdir -p $GOPATH/src/github.com/myname/myproject
 cd $GOPATH/src/github.com/myname/myproject
 git init
@@ -47,7 +47,7 @@ Comece a programar e não se esqueça de git add e git commit em seus arquivos. 
 
 Criar um novo repositório no github.com, faça o upload de sua chave pública SSH se você não tiver feito isso antes e de um push suas alterações para o repositório:
 
-{% highlight bash %}
+{% highlight bash linenos %}
 git remote add origin git@github.com:myname/myproject.git
 git push origin master
 {% endhighlight %}
