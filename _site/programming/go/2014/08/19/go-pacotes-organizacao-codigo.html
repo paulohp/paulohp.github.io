@@ -40,7 +40,7 @@
 <div class="post">
 <p>Em um post anterior, falei em como criar pacotes com Go, mas muito superficialmente. De uns tempos pra cá, venho tendo a necessidade de criar estruturas para aplicações de larga escala, criando bibliotecas reutilizáveis e claro, usando pacotes de terceiros. Nesse post vou mostrar um pouco como organizar e reutilizar esses pacotes.</p>
 
-<p>Toda aplicação Go é contida dentro de um <strong>pacote</strong> (<code>package</code>). Todo pacote deve estar dentro do <code>$GOPATH</code> e são nomeados de acordo com a pasta e arquivo em que está. Para carrega-lo em nosso código usamos <code>ìmport</code>`.</p>
+<p>Toda aplicação Go é contida dentro de um <strong>pacote</strong> (<code>package</code>). Todo pacote deve estar dentro do <code>$GOPATH</code> e são nomeados de acordo com a pasta e arquivo em que está. Para carrega-lo em nosso código usamos <code>import</code>.</p>
 
 <div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno"> 1</span> <span class="kn">package</span> <span class="nx">main</span>
 <span class="lineno"> 2</span> <span class="kn">import</span> <span class="p">(</span>
@@ -78,8 +78,22 @@
 
 <p>Geralmente, os arquivos que contem o pacote são nomeados de acordo com a pasta (o pacote e a pasta chamam-se <code>foo</code> e o arquivo <code>foo.go</code>).</p>
 
-<p>Para fazer o build desse código, basta rodar <code>go build</code>, que vai gerar um binario executavel <code>foer</code>.  Basta você rodar <code>./foer</code> que o resultado será
-<code>bar</code> impresso no terminal. Já para instalar o pacote e deixa-lo disponível globalmente, temos que executar <code>go install</code>. O pacote estará em <code>$GOPATH/bin/foer</code>.</p>
+<p>Agora, vamos criar um programa que vai fazer uso desse pacote que criamos.</p>
+
+<p>Crie uma pasta <code>fooz</code> e um arquivo <code>fooz.go</code> e vamos edita-lo:</p>
+
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="kn">package</span> <span class="nx">main</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="lineno">4</span>   <span class="s">&quot;foo&quot;</span>
+<span class="lineno">5</span> <span class="p">)</span>
+<span class="lineno">6</span> 
+<span class="lineno">7</span> <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">8</span>   <span class="nx">foo</span><span class="p">.</span><span class="nx">Bar</span><span class="p">()</span>
+<span class="lineno">9</span> <span class="p">}</span></code></pre></div>
+
+<p>Para fazer o build desse código, basta rodar <code>go build</code>, que vai gerar um binario executavel <code>fooz</code>.  Basta você rodar <code>./fooz</code> que o resultado será
+<code>bar</code> impresso no terminal. Já para instalar o pacote e deixa-lo disponível globalmente, temos que executar <code>go install</code>. O pacote estará em <code>$GOPATH/bin/fooz</code>.</p>
 
 <p>Para usar pacotes de terceiro, vamos usar o comando <code>go get</code>, que baixa a dependencia e a coloca dentro do nosso workspace. Vamos ver um exemplo com o Martini web framework.</p>
 
