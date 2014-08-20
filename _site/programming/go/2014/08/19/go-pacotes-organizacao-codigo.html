@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Paulo Pires - Software Developer</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/skel-noscript.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style-desktop.css" />
+    <link href="/css/syntax.css" rel="stylesheet">
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+  </head>
+    <body>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="container">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Home -->
+        <div class="wrapper wrapper-style1">
+        <article id="portfolio">
+          <header>
+            <h2>Blog <span class="small-sub">{kirk.svbtle.com}</span></h2>
+            <!--<span>Proin odio consequat  sapien vestibulum ipsum primis sed amet consequat lorem dolore feugiat lorem ipsum dolore.</span>-->
+          </header>
+          <div class="container">
+            <div class="row">
+                <h2>Go: Organizando e usando pacotes.</h2>
+<p class="meta">19 Aug 2014</p>
+
+<div class="post">
+<p>Em um post anterior, falei em como criar pacotes com Go, mas muito superficialmente. De uns tempos pra cá, venho tendo a necessidade de criar estruturas para aplicações de larga escala, criando bibliotecas reutilizáveis e claro, usando pacotes de terceiros. Nesse post vou mostrar um pouco como organizar e reutilizar esses pacotes.</p>
+
+<p>Toda aplicação Go é contida dentro de um <strong>pacote</strong> (<code>package</code>). Todo pacote deve estar dentro do <code>$GOPATH</code> e são nomeados de acordo com a pasta e arquivo em que está. Para carrega-lo em nosso código usamos <code>ìmport</code>`.</p>
+
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno"> 1</span> <span class="kn">package</span> <span class="nx">main</span>
+<span class="lineno"> 2</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="lineno"> 3</span>   <span class="s">&quot;fmt&quot;</span>
+<span class="lineno"> 4</span>   <span class="s">&quot;os&quot;</span>
+<span class="lineno"> 5</span>   <span class="s">&quot;strings&quot;</span>
+<span class="lineno"> 6</span>  <span class="p">)</span>
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 9</span>   <span class="nx">who</span> <span class="o">:=</span> <span class="s">&quot;World&quot;</span>
+<span class="lineno">10</span>   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="p">{</span>
+<span class="lineno">11</span>     <span class="nx">who</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Join</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="lineno">12</span>   <span class="p">}</span>
+<span class="lineno">13</span>   <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+<span class="lineno">14</span> <span class="p">}</span></code></pre></div>
+
+<p>Nesse exemplo fizemos o import de 3 pacotes da biblioteca padrão do Go. Podemos notar o uso do metodo <code>Join</code>, do pacote <code>strings</code> e <code>Args</code>, do pacote <code>os</code>.</p>
+
+<p>Agora vamos criar nossos próprios pacotes. O primeiro passo é criar um workspace. Dentro desse workspace vamos ter 3 pastas:<br>
+<code>bin</code>: Aqui ficaram os executáveis.<br>
+<code>src</code>: É onde seus pacotes vão sobreviver. Todo código .go vai ficar aqui.<br>
+<code>pkg</code>: Algum pacote extra do SO.  </p>
+
+<p>Quando você importa um pacote, o Go vai atras do pacote em cada workspace declarado no $GOPATH. O meu $GOPATH está setado para <code>~/go</code></p>
+
+<p>Dentro de <code>~/go/src</code> crie <code>foo/foo.go</code>, o abra em seu editor e edite:</p>
+
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno">1</span> <span class="kn">package</span> <span class="nx">foo</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="kd">func</span> <span class="nx">Bar</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">6</span>   <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Bar&quot;</span><span class="p">)</span>
+<span class="lineno">7</span> <span class="p">}</span></code></pre></div>
+
+<p>Geralmente, os arquivos que contem o pacote são nomeados de acordo com a pasta (o pacote e a pasta chamam-se <code>foo</code> e o arquivo <code>foo.go</code>).</p>
+
+<p>Para fazer o build desse código, basta rodar <code>go build</code>, que vai gerar um binario executavel <code>foer</code>.  Basta você rodar <code>./foer</code> que o resultado será
+<code>bar</code> impresso no terminal. Já para instalar o pacote e deixa-lo disponível globalmente, temos que executar <code>go install</code>. O pacote estará em <code>$GOPATH/bin/foer</code>.</p>
+
+<p>Para usar pacotes de terceiro, vamos usar o comando <code>go get</code>, que baixa a dependencia e a coloca dentro do nosso workspace. Vamos ver um exemplo com o Martini web framework.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> go get github.com/go-martini/martini</code></pre></div>
+
+<p>Edite o arquivo <code>foo.go</code> e adicione:</p>
+
+<div class="highlight"><pre><code class="language-go" data-lang="go"><span class="lineno"> 1</span> <span class="kn">package</span> <span class="nx">main</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="kn">import</span> <span class="s">&quot;github.com/go-martini/martini&quot;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno"> 6</span>   <span class="nx">m</span> <span class="o">:=</span> <span class="nx">martini</span><span class="p">.</span><span class="nx">Classic</span><span class="p">()</span>
+<span class="lineno"> 7</span>   <span class="nx">m</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+<span class="lineno"> 8</span>     <span class="k">return</span> <span class="s">&quot;Hello world!&quot;</span>
+<span class="lineno"> 9</span>   <span class="p">})</span>
+<span class="lineno">10</span>   <span class="nx">m</span><span class="p">.</span><span class="nx">Run</span><span class="p">()</span>
+<span class="lineno">11</span> <span class="p">}</span></code></pre></div>
+
+<p>E execute <code>go run foo.go</code>, que já faz o build e executa o binário.</p>
+
+<p>Bom, era mais ou menos isso que eu tinha pra falar. Vamos fazer mais coisas alem de scripts!</p>
+
+</div>
+
+            </div>
+            <div class="row">
+              <div class="12u">
+                <div id="disqus_thread"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+         <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'paulopires'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/config.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51277167-1', 'paulopires.co');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>
