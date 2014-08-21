@@ -40,7 +40,7 @@
 <div class="post">
 <p>Desde que comecei a trabalhar com Node, a uns 2 anos, buscava entender uma coisa: Stream. Até um certo momento, não era uma coisa útil pra mim, mas depois de conhecer essa abstração, acho que é impossível programar no Node.js sem conhece-la bem. Falei que tinha uma abstração, mas na realidade são duas. Streams de leitura (ReadStream), e de escrita (WriteStream). Eles são implementados ao longo de muitos objetos Node e representam o fluxo de entrada e saída de dados. Se você trabalha com Node.js, já deve ter trombado com stream por ai.</p>
 
-<h1>ReadStream</h1>
+<h2>ReadStream</h2>
 
 <p>Vamos imaginar que ReadStream seria uma torneira de dados. E depois que voce criar uma, voce pode:</p>
 
@@ -76,7 +76,7 @@ Você nunca sabe quando a agua da torneira vai acabar, mas as streams sim, e voc
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="nx">readStream</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span></code></pre></div>
 
-<h1>WriteStream</h1>
+<h2>WriteStream</h2>
 
 <p>Uma stream de leitura, formalmente conhecida como <code>WriteStream</code>, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:</p>
 
@@ -91,7 +91,7 @@ Você pode escrever um buffer ou uma string chamando <code>write</code>:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">streamDeEscrita</span> <span class="o">=</span> <span class="p">...</span>
 <span class="lineno">2</span> <span class="nx">streamDeEscrita</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;T2xhciwgdGFpcj8gdG9yIQ==&#39;</span><span class="p">,</span> <span class="s1">&#39;base64&#39;</span><span class="p">);</span></code></pre></div>
 
-<h1>Alguns exemplos de Streams</h1>
+<h2>Alguns exemplos de Streams</h2>
 
 <p>Vamos ver um pouco delas no mundo real.
 <strong>Streams do sistema de arquivos</strong><br>
