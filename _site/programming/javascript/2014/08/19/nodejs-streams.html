@@ -78,7 +78,7 @@ Você nunca sabe quando a agua da torneira vai acabar, mas as streams sim, e voc
 
 <h2>WriteStream</h2>
 
-<p>Uma stream de leitura, formalmente conhecida como <code>WriteStream</code>, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:</p>
+<p>Uma stream de escrita, formalmente conhecida como <code>WriteStream</code>, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:</p>
 
 <p><strong>Escreve nela</strong><br>
 Você pode escrever um buffer ou uma string chamando <code>write</code>:</p>
@@ -93,9 +93,9 @@ Você pode escrever um buffer ou uma string chamando <code>write</code>:</p>
 
 <h2>Alguns exemplos de Streams</h2>
 
-<p>Vamos ver um pouco delas no mundo real.
+<p>Vamos ver um pouco delas no mundo real.<br>
 <strong>Streams do sistema de arquivos</strong><br>
-Você pode criar ma stream de leitura de um arquivo fazendo assim:</p>
+Você pode criar uma stream de leitura de um arquivo fazendo assim:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">requeire</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">)</span>
 <span class="lineno">2</span> <span class="kd">var</span> <span class="nx">rs</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s1">&#39;arquivo.txt&#39;</span><span class="p">,</span>  <span class="p">{</span><span class="nx">encoding</span><span class="o">:</span> <span class="s1">&#39;utf8&#39;</span><span class="p">})</span></code></pre></div>

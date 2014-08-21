@@ -50,7 +50,7 @@ readStream.resume();
 {% endhighlight %}
 
 ##WriteStream  
-Uma stream de leitura, formalmente conhecida como ``WriteStream``, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:
+Uma stream de escrita, formalmente conhecida como ``WriteStream``, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:
 
 **Escreve nela**  
 Você pode escrever um buffer ou uma string chamando ``write``:
@@ -66,9 +66,9 @@ streamDeEscrita.write('T2xhciwgdGFpcj8gdG9yIQ==', 'base64');
 {% endhighlight %}
 
 ##Alguns exemplos de Streams
-Vamos ver um pouco delas no mundo real.
+Vamos ver um pouco delas no mundo real.  
 **Streams do sistema de arquivos**  
-Você pode criar ma stream de leitura de um arquivo fazendo assim:
+Você pode criar uma stream de leitura de um arquivo fazendo assim:
 {% highlight javascript linenos %}
 var fs = requeire('fs')
 var rs = fs.createReadStream('arquivo.txt',  {encoding: 'utf8'})
