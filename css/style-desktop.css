@@ -24,7 +24,7 @@
 		font-size: 2em;
 		letter-spacing: -0.015em;
 	}
-	
+
 	h3
 	{
 		font-size: 1.5em;
@@ -40,9 +40,10 @@
 	{
 		margin: 0 0 3em 0;
 	}
-	
+
 		header > span
 		{
+			color: #fff;
 			font-size: 1.25em;
 		}
 
@@ -50,21 +51,21 @@
 	{
 		margin: 3em 0 0 0;
 	}
-	
+
 		footer > p
 		{
 			font-size: 1.25em;
 		}
-	
+
 	form
 	{
 	}
-	
+
 		form .button
 		{
 			margin: 0 0.5em 0 0.5em;
 		}
-	
+
 	.button
 	{
 		padding: 1em 2.35em 1em 2.35em;
@@ -110,7 +111,7 @@
 		padding: 8em 0 8em 0;
 		text-align: center;
 	}
-	
+
 		.wrapper-first
 		{
 			padding-top: 12em;
@@ -128,12 +129,12 @@
 		{
 			background: #383838;
 		}
-		
+
 		#nav a:active
 		{
 			background: #484848;
 		}
-	
+
 		#nav a
 		{
 			padding: 0.2em 1em 0.2em 1em;
@@ -147,7 +148,7 @@
 			transition: background-color .2s ease-in-out;
 			color: #fff;
 		}
-		
+
 /*********************************************************************************/
 /* Articles                                                                      */
 /*********************************************************************************/
@@ -168,22 +169,22 @@
 		{
 			margin-top: 0.35em;
 		}
-	
+
 		#top p
 		{
 			font-size: 1.5em;
 			line-height: 1.75em;
 		}
-		
+
 	#contact
 	{
 	}
-	
+
 		#contact footer
 		{
 			font-size: 0.9em;
 		}
-		
+
 /*********************************************************************************/
 /* Copyright                                                                     */
 /*********************************************************************************/
@@ -200,7 +201,7 @@
 			box-shadow: -1px 0px 0px 0px rgba(255,255,255,0.1);
 			padding: 0 1em 0 1em;
 		}
-		
+
 		#copyright li:first-child
 		{
 			border: 0;
