@@ -378,15 +378,15 @@
 				background: url('images/bg.png');
 			}
 
-			ul.social li.twitter:hover				{ background-color: #2DAAE4; }
-			ul.social li.facebook:hover				{ background-color: #3C5A98; }
+			ul.social li.twitter:hover				{ background-color: #FAFAFA; }
+			ul.social li.facebook:hover				{ background-color: #FAFAFA; }
 			ul.social li.dribbble:hover				{ background-color: #C4376B; }
-			ul.social li.linkedin:hover				{ background-color: #006599; }
+			ul.social li.linkedin:hover				{ background-color: #FAFAFA; }
 			ul.social li.tumblr:hover				{ background-color: #51718A; }
-			ul.social li.googleplus:hover			{ background-color: #DA2713; }
+			ul.social li.googleplus:hover			{ background-color: #FAFAFA; }
 			ul.social li.github:hover				{ background-color: #FAFAFA; }
 			ul.social li.rss:hover					{ background-color: #F2600B; }
-			ul.social li.instagram:hover			{ background-color: #E0D7C8; }
+			ul.social li.instagram:hover			{ background-color: #FAFAFA; }
 			ul.social li.foursquare:hover			{ background-color: #39A3D4; }
 			ul.social li.skype:hover				{ background-color: #10BEF1; }
 			ul.social li.soundcloud:hover			{ background-color: #FE5419; }
