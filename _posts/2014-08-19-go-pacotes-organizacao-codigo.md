@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Go: Organizando e usando pacotes."
+title_p:  "Go: Organizando e usando pacotes."
 date:   2014-08-19 23:00:07
 lang: pt
 categories: programming go

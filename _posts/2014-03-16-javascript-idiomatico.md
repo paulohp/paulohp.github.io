@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Javascript Idiomático"
+title_p:"Javascript Idiomático"
 date:   2014-03-16 01:10:07
 lang: pt
 categories: programming javascript

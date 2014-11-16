@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Como começar com Node Webkit? Parte 1"
+title_p: "Como começar com Node Webkit? Parte 1"
 date:   2014-05-24 12:29:07
 lang: pt
 categories: programming javascript

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Desafio <br/> 5 Commits"
+title_p:  "Desafio 5 Commits"
 date:   2014-03-19 12:00:00
 categories: programming desafios
 lang: pt

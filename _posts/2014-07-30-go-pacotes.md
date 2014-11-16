@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Iniciando com Go: Criando Pacotes"
+title_p:"Iniciando com Go: Criando Pacotes"
 date:   2014-07-30 15:21:07
 lang: pt
 categories: programming go
