@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Node Streams"
+title:  "Node <br/> Streams"
 date:   2014-08-20 00:00:07
+lang: pt
 categories: programming javascript
 cover: "http://jxck.node-ninja.com/public/images/stream-image.jpg"
 excerpt: "Veja como streams são simples e melhoram bastante seu codigo"
@@ -12,7 +13,7 @@ Desde que comecei a trabalhar com Node, a uns 2 anos, buscava entender uma coisa
 ##ReadStream
 Vamos imaginar que ReadStream seria uma torneira de dados. E depois que voce criar uma, voce pode:
 
-**Esperar por dado**  
+**Esperar por dado**
 Ao conecta-lo com o evento de "data" você sera notificado toda vez que um "pedaço" (formalmente conhecido como ``chunk``) for entregue pela nossa stream. Essas entregas podem ser feitas como buffer ou string.
 
 {% highlight javascript linenos %}
@@ -28,7 +29,7 @@ streamDeLeitura.on('data', function(data) {
 });
 {% endhighlight %}
 
-**Saber quando acaba**  
+**Saber quando acaba**
 Você nunca sabe quando a agua da torneira vai acabar, mas as streams sim, e você pode saber quando isso ocorre escutando o evento ``end``, tipo assim:
 {% highlight javascript linenos %}
 var streamDeLeitura = ...
@@ -49,10 +50,10 @@ Para resumir, é tão simples quanto isso:
 readStream.resume();
 {% endhighlight %}
 
-##WriteStream  
+##WriteStream
 Uma stream de escrita, formalmente conhecida como ``WriteStream``, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:
 
-**Escreve nela**  
+**Escreve nela**
 Você pode escrever um buffer ou uma string chamando ``write``:
 {% highlight javascript linenos %}
 var streamDeEscrita = ...
@@ -66,16 +67,16 @@ streamDeEscrita.write('T2xhciwgdGFpcj8gdG9yIQ==', 'base64');
 {% endhighlight %}
 
 ##Alguns exemplos de Streams
-Vamos ver um pouco delas no mundo real.  
-**Streams do sistema de arquivos**  
+Vamos ver um pouco delas no mundo real.
+**Streams do sistema de arquivos**
 Você pode criar uma stream de leitura de um arquivo fazendo assim:
 {% highlight javascript linenos %}
 var fs = requeire('fs')
 var rs = fs.createReadStream('arquivo.txt',  {encoding: 'utf8'})
-{% endhighlight %}  
+{% endhighlight %}
 
 Aqui lemos um arquivo com encoding UTF8 através de uma stream.
-E para gravar nele, é bem simples:  
+E para gravar nele, é bem simples:
 {% highlight javascript linenos %}
 var fs = require('fs');
 var ws = fs.createWriteStream('arquivo.txt' , {encoding: 'utf8'});

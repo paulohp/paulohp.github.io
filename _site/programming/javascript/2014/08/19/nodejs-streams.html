@@ -34,17 +34,17 @@
       </header>
       <div class="container">
         <div class="row">
-          <h2>Node Streams</h2>
+          <h2>Node <br/> Streams</h2>
 <p class="meta">19 Aug 2014</p>
 
 <div class="post">
-<p>Desde que comecei a trabalhar com Node, a uns 2 anos, buscava entender uma coisa: Stream. Até um certo momento, não era uma coisa útil pra mim, mas depois de conhecer essa abstração, acho que é impossível programar no Node.js sem conhece-la bem. Falei que tinha uma abstração, mas na realidade são duas. Streams de leitura (ReadStream), e de escrita (WriteStream). Eles são implementados ao longo de muitos objetos Node e representam o fluxo de entrada e saída de dados. Se você trabalha com Node.js, já deve ter trombado com stream por ai.</p>
+  <p>Desde que comecei a trabalhar com Node, a uns 2 anos, buscava entender uma coisa: Stream. Até um certo momento, não era uma coisa útil pra mim, mas depois de conhecer essa abstração, acho que é impossível programar no Node.js sem conhece-la bem. Falei que tinha uma abstração, mas na realidade são duas. Streams de leitura (ReadStream), e de escrita (WriteStream). Eles são implementados ao longo de muitos objetos Node e representam o fluxo de entrada e saída de dados. Se você trabalha com Node.js, já deve ter trombado com stream por ai.</p>
 
 <h2>ReadStream</h2>
 
 <p>Vamos imaginar que ReadStream seria uma torneira de dados. E depois que voce criar uma, voce pode:</p>
 
-<p><strong>Esperar por dado</strong><br>
+<p><strong>Esperar por dado</strong>
 Ao conecta-lo com o evento de &quot;data&quot; você sera notificado toda vez que um &quot;pedaço&quot; (formalmente conhecido como <code>chunk</code>) for entregue pela nossa stream. Essas entregas podem ser feitas como buffer ou string.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="kd">var</span> <span class="nx">streamDeLeitura</span> <span class="o">=</span> <span class="p">...</span>
@@ -58,7 +58,7 @@ Ao conecta-lo com o evento de &quot;data&quot; você sera notificado toda vez qu
 <span class="lineno"> 9</span>   <span class="c1">//Aqui data é uma string</span>
 <span class="lineno">10</span> <span class="p">});</span></code></pre></div>
 
-<p><strong>Saber quando acaba</strong><br>
+<p><strong>Saber quando acaba</strong>
 Você nunca sabe quando a agua da torneira vai acabar, mas as streams sim, e você pode saber quando isso ocorre escutando o evento <code>end</code>, tipo assim:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">streamDeLeitura</span> <span class="o">=</span> <span class="p">...</span>
@@ -80,7 +80,7 @@ Você nunca sabe quando a agua da torneira vai acabar, mas as streams sim, e voc
 
 <p>Uma stream de escrita, formalmente conhecida como <code>WriteStream</code>, é conhecida por enviar ou escrever dados. Podendo ser uma conexão com a rede ou um arquivo. Com uma WriteStream podemos:</p>
 
-<p><strong>Escreve nela</strong><br>
+<p><strong>Escreve nela</strong>
 Você pode escrever um buffer ou uma string chamando <code>write</code>:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">streamDeEscrita</span> <span class="o">=</span> <span class="p">...</span>
@@ -93,16 +93,15 @@ Você pode escrever um buffer ou uma string chamando <code>write</code>:</p>
 
 <h2>Alguns exemplos de Streams</h2>
 
-<p>Vamos ver um pouco delas no mundo real.<br>
-<strong>Streams do sistema de arquivos</strong><br>
+<p>Vamos ver um pouco delas no mundo real.
+<strong>Streams do sistema de arquivos</strong>
 Você pode criar uma stream de leitura de um arquivo fazendo assim:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">requeire</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">)</span>
 <span class="lineno">2</span> <span class="kd">var</span> <span class="nx">rs</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createReadStream</span><span class="p">(</span><span class="s1">&#39;arquivo.txt&#39;</span><span class="p">,</span>  <span class="p">{</span><span class="nx">encoding</span><span class="o">:</span> <span class="s1">&#39;utf8&#39;</span><span class="p">})</span></code></pre></div>
-  
 
 <p>Aqui lemos um arquivo com encoding UTF8 através de uma stream.
-E para gravar nele, é bem simples:  </p>
+E para gravar nele, é bem simples:</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
 <span class="lineno">2</span> <span class="kd">var</span> <span class="nx">ws</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s1">&#39;arquivo.txt&#39;</span> <span class="p">,</span> <span class="p">{</span><span class="nx">encoding</span><span class="o">:</span> <span class="s1">&#39;utf8&#39;</span><span class="p">});</span></code></pre></div>

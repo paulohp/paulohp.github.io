@@ -2,6 +2,7 @@
 layout: post
 title:  "Javascript Idiomático"
 date:   2014-03-16 01:10:07
+lang: pt
 categories: programming javascript
 cover: "http://lexfridman.com/blogs/research/files/2011/02/donald_knuth.png"
 excerpt: "Como dizem por ai, código bem escrito não precisa de documentação."

@@ -2,6 +2,7 @@
 layout: post
 title:  "Iniciando com Go: Criando Pacotes"
 date:   2014-07-30 15:21:07
+lang: pt
 categories: programming go
 cover: "https://c2.staticflickr.com/8/7186/6830705590_ed04db9d17.jpg"
 excerpt: "Como criar pacotes com Go? Do inicio a publicação"

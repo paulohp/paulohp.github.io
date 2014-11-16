@@ -2,6 +2,7 @@
 layout: post
 title:  "Go: Organizando e usando pacotes."
 date:   2014-08-19 23:00:07
+lang: pt
 categories: programming go
 cover: "https://pbs.twimg.com/media/Bgyw0Q2IIAAz9K7.jpg:large"
 excerpt: "Vamos ver como criar pacotes para aplicações de larga escala"
@@ -30,10 +31,10 @@ func main() {
 {% endhighlight %}
 Nesse exemplo fizemos o import de 3 pacotes da biblioteca padrão do Go. Podemos notar o uso do metodo ``Join``, do pacote ``strings`` e ``Args``, do pacote ``os``.
 
-Agora vamos criar nossos próprios pacotes. O primeiro passo é criar um workspace. Dentro desse workspace vamos ter 3 pastas:  
-``bin``: Aqui ficaram os executáveis.  
-``src``: É onde seus pacotes vão sobreviver. Todo código .go vai ficar aqui.  
-``pkg``: Algum pacote extra do SO.  
+Agora vamos criar nossos próprios pacotes. O primeiro passo é criar um workspace. Dentro desse workspace vamos ter 3 pastas:
+``bin``: Aqui ficaram os executáveis.
+``src``: É onde seus pacotes vão sobreviver. Todo código .go vai ficar aqui.
+``pkg``: Algum pacote extra do SO.
 
 Quando você importa um pacote, o Go vai atras do pacote em cada workspace declarado no $GOPATH. O meu $GOPATH está setado para ``~/go``
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Desafio <br/> 5 Commits"
 date:   2014-03-19 12:00:00
 categories: programming desafios
+lang: pt
 cover: "https://www.apertus.org/sites/default/files/bart_os.gif"
 excerpt: "A ideia é incentivar maior contribuição com a comunidade open source"
 ---

@@ -10,6 +10,7 @@ title: Blog
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
       <p>{{post.excerpt}}</p>
       <span>{{ post.date | date_to_string }}</span>
+      <span class="flag flag-svg-small flag-{{post.lang}}"></span>
     </article>
   </div>
 {% endfor %}

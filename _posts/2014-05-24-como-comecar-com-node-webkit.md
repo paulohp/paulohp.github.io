@@ -2,6 +2,7 @@
 layout: post
 title:  "Como começar com Node Webkit? Parte 1"
 date:   2014-05-24 12:29:07
+lang: pt
 categories: programming javascript
 cover: "https://cdn.tutsplus.com/net/uploads/2013/12/html5-node-webkit-retina-preview.png"
 excerpt: "Como fazer apps desktop só com JavaScript?"
