@@ -65,7 +65,7 @@
 
 		a:hover
 		{
-			color: #C0392B !important;
+			color: #ff6bc4 !important;
 		}
 
 		a img
@@ -275,7 +275,7 @@
 		border-radius: 8px;
 		text-shadow: -1px -1px 0.5px rgba(0,0,0,0.5);
 		overflow: hidden;
-		background: #F22613;
+		background: #41cab7;
 	}
 
 		.button:before
@@ -291,7 +291,7 @@
 
 		.button:hover
 		{
-			background-color: #CF000F;
+			background-color: #444;
 			color: #fff !important;
 		}
 
@@ -965,11 +965,11 @@
 
 		cursor: default;
 
-		background-color: #F22613;
+		background-color: #41cab7;
 		min-height: 59px;
 		height: 59px;
 		padding: 0 5px;
-		border-bottom: 2px solid #CF000F;
+		border-bottom: 2px solid #444;
 		z-index: 1500;
 	}
 
